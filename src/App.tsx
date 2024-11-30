@@ -1,25 +1,48 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./components/views/LandingPage/LandingPage";
+import { Box, ThemeProvider } from "@mui/material";
+import { theme } from "./styles/theme";
+import SearchView from "./components/views/SearchView/SearchView";
+import { Navbar } from "./components/shared/Navbar";
+import MainArea from "./components/shared/MainArea";
+import { useState } from "react";
+import MovieDetails from "./components/views/MovieDetails/MovieDetails";
 
 function App() {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const handleSearch = (query: string) => {
+    setSearchQuery(query);
+  };
+
+  const resetSearch = () => {
+    setSearchQuery("");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box>
+        <Navbar handleSearch={handleSearch} searchQuery={searchQuery} />
+        <MainArea>
+          <Routes>
+            <Route
+              path="/"
+              element={<LandingPage resetSearch={resetSearch} />}
+            />
+            <Route
+              path="/search"
+              element={
+                <SearchView
+                  searchQuery={searchQuery}
+                  resetSearch={resetSearch}
+                />
+              }
+            />
+            <Route path="/movie/:id" element={<MovieDetails />} />
+          </Routes>
+        </MainArea>
+      </Box>
+    </ThemeProvider>
   );
 }
 
