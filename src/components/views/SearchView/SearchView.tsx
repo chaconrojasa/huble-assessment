@@ -21,6 +21,7 @@ export function MovieCard({ movie, goToMovie }: any) {
         marginX: "10px",
         marginBottom: "20px",
         borderRadius: "10px",
+        overflow: "hidden",
         border: `1px solid ${yellow}`,
         "&:hover": {
           transform: "scale(1.2)",
