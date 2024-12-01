@@ -20,6 +20,7 @@ export function MovieCard({ movie, goToMovie }: any) {
         marginX: "10px",
         marginBottom: "20px",
         borderTopLeftRadius: "10px",
+        overflow: "hidden",
         borderTopRightRadius: "10px",
         border: `1px solid ${tonedDownYellow}`,
         "&:hover": {
