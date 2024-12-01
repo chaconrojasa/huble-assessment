@@ -16,7 +16,7 @@ export function MovieCard({ movie, goToMovie }: any) {
     <Grid2
       sx={{
         height: "300px",
-        maxWidth: "180px",
+        width: "180px",
         background: yellow,
         marginX: "10px",
         marginBottom: "20px",
@@ -76,9 +76,8 @@ export function MovieCard({ movie, goToMovie }: any) {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          width: "180px",
+          width: "100%",
           height: "60px",
-          paddingX: "10px",
         }}
       >
         <Box
