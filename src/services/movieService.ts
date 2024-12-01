@@ -53,8 +53,7 @@ export async function fetchPopularMovies(): Promise<Movie[]> {
     method: "GET",
     headers: {
       accept: "application/json",
-      Authorization:
-        "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYzZmNDljMDdhYTU5MzYzY2M1Mzk2YjVkYTNjNGM2NSIsIm5iZiI6MTczMjY2MDAwNS4xNzYzNzE4LCJzdWIiOiI2NzQ2NGE5NjAyNjY4MmI5MmViMDU0ZjciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.iM7xeeE8FEKFmnk-oCU7GH0WfAk8gQsr6DqMh0WxhZQ",
+      Authorization: `Bearer ${tmdbToken}`,
     },
   };
 

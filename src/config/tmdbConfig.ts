@@ -65,5 +65,4 @@ export const tmdbConfig = {
   ],
 };
 
-export const tmdbToken =
-  "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiYzZmNDljMDdhYTU5MzYzY2M1Mzk2YjVkYTNjNGM2NSIsIm5iZiI6MTczMjgzODExNS45NDU5NDA1LCJzdWIiOiI2NzQ2NGE5NjAyNjY4MmI5MmViMDU0ZjciLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.npPfFWOzxLaaV-ILC_qZBJlSp7pqk_uvSzWmrue5qz4";
+export const tmdbToken = process.env.REACT_APP_TMDB_TOKEN;
